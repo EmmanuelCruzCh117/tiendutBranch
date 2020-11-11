@@ -1,3 +1,14 @@
+<?php
+
+include('assets/data/conexion.php');
+
+$obj =new Conexiones;
+
+$res = $obj->buscarProducto();
+
+$temp =  $res;
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -78,22 +89,21 @@
 		<div class="container borde-capa">-->
             <div class="row justify-content-md-center espacio-row">
                 <div class="col-md-3">
-                    <img src="assets/img/watch/watch4.PNG" class="img-fluid" width="250" alt="">
-                    <p><strong>Reloj 1</strong></p>
-                    <p><strong>$81</strong></p>
-                    <button type="button" class="btn btn-outline-light">Comprar</button>
-
-                </div>
-                <div class="col-md-3">
-                    <img src="assets/img/watch/watch1.PNG" class="img-fluid" width="250" alt="">
-                    <p><strong>Reloj 2</strong></p>
-                    <p><strong>$75</strong></p>
+                    <img src=<?php print($temp[0]['img'] );?> class="img-fluid" width="250" alt="">
+                    <p><strong><?php print($temp[0]['nom_prod']);?></strong></p>
+                    <p><strong>$<?php print($temp[0]['prec_venta']);?></strong></p>
                     <button type="button" class="btn btn-outline-light">Comprar</button>
                 </div>
                 <div class="col-md-3">
-                    <img src="assets/img/watch/watch5.PNG" class="img-fluid" width="250" alt="">
-                    <p><strong>Reloj 3</strong></p>
-                    <p><strong>$69</strong></p>
+                    <img src=<?php print($temp[1]['img'] );?> class="img-fluid" width="250" alt="">
+                    <p><strong><?php print($temp[1]['nom_prod']);?></strong></p>
+                    <p><strong>$<?php print($temp[1]['prec_venta']);?></strong></p>
+                    <button type="button" class="btn btn-outline-light">Comprar</button>
+                </div>
+                <div class="col-md-3">
+                    <img src=<?php print($temp[2]['img'] );?> class="img-fluid" width="250" alt="">
+                    <p><strong><?php print($temp[2]['nom_prod']);?></strong></p>
+                    <p><strong>$<?php print($temp[2]['prec_venta']);?></strong></p>
                     <button type="button" class="btn btn-outline-light">Comprar</button>
                 </div>
             </div>

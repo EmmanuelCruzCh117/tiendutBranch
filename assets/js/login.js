@@ -23,7 +23,7 @@ $(document).ready(function() {
             .then(response => {
                 //console.log(response.datos);
                 if (response.dato == 'ok') {
-                    location.href = "principal.html";
+                    location.href = "principal.php";
                 } else {
                     alert("Datos incorrectos :(");
                 }
